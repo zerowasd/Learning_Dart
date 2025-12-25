@@ -1,5 +1,5 @@
 ///functions - types of parameters
-///I am trying to avoid syntactical complex as much as i can
+///I am trying to avoid syntax complexity as much as i can
 
 void main(){
   int a = 1;
