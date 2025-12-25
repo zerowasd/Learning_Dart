@@ -148,3 +148,8 @@ Markdown → Parsed by Dart Analyzer
 VS Code → Renders in hover window
 
 dart doc → Generates HTML docs
+
+
+-------------------------------------------------------------------------------
+1️⃣ Functions + Null Safety (advanced patterns) 2️⃣ Collections (List & Map) with functions 
+3️⃣ Control flow (if, for, while) 4️⃣ Classes & Objects (pure Dart OOP)
