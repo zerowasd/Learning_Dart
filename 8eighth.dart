@@ -1,4 +1,4 @@
-///collections - List[order], Set{unique}, Map{key-value}
+ ///collections - List[order], Set{unique}, Map{key-value}
 
 void main(){
     //list - ordered
