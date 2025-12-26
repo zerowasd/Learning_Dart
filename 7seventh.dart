@@ -1,4 +1,4 @@
-///control flow - loops
+///control flow - loops | warning are intentional
 
 void main(){
   var whiley = 1;
