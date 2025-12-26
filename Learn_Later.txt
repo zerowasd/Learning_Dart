@@ -153,3 +153,53 @@ dart doc → Generates HTML docs
 -------------------------------------------------------------------------------
 1️⃣ Functions + Null Safety (advanced patterns) 2️⃣ Collections (List & Map) with functions 
 3️⃣ Control flow (if, for, while) 4️⃣ Classes & Objects (pure Dart OOP)
+
+-------------------------------------------------------------------------------
+
+Primary Command
+Production: dart compile js -o <output_file>.js <input_file>.dart
+This generates minified, optimized JavaScript suitable for deployment.
+Use the -On flag (e.g., -O2, -O3) to specify the optimization level. 
+Recommended Web Tools
+For web development, the Dart team recommends using the webdev tool instead of calling the compiler directly: 
+Build for Deployment: webdev build (uses the production compiler).
+Development Server: webdev serve (uses the development compiler for fast incremental builds). 
+Legacy Note
+The standalone dart2js command-line tool was removed in Dart 2.18 and replaced by dart compile js. 
+
+
+
+
+undefined
+undefined
+undefined
+11 sites
+Dart (programming language) - Wikipedia
+Introduced in Dart 2.0, the Dart-based dart2js evolved from earlier compilers. It intended to implement the full Dart language spe...
+
+Wikipedia
+
+dart compile
+21 Oct 2025 — Overview. ... If your package or any of its dependencies has build hooks, you must use the dart build command. The dart...
+
+Dart programming language
+dart2js: Dart-to-JavaScript compiler
+14 Sept 2025 — Dart 2.18 removes the dart2js command-line tool from the Dart package, but retains the dart2js compiler. Use dart comp...
+
+Dart programming language
+Show all
+i did not understand webdev
+webdev is a command-line tool used to run and build Dart web applications. It manages the complex process of compiling your code, handling assets, and serving your app in a local browser during development. 
+How to Use webdev
+Installation: Install it globally using the Dart package manager:
+dart pub global activate webdev.
+Run for Development: In your project folder, run:
+webdev serve.
+This starts a local server (usually at localhost:8080) and automatically recompiles your code whenever you save changes.
+Build for Production: When your app is ready for the web, run:
+webdev build.
+This creates a build/ folder containing highly optimized, minified JavaScript files that you can upload to any web host. 
+Why use it instead of just dart compile js?
+Automation: It watches your files and reloads the browser automatically.
+Debugging: It uses a special development compiler that makes it much easier to debug your Dart code directly in Chrome.
+Project Structure: It understands standard Dart web project layouts and automatically includes your HTML, CSS, and other assets in the final build.

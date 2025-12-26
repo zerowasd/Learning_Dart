@@ -21,6 +21,7 @@ void main(){
   print(agecheck(age));
   marksobtained(marks, "if, else if, else <- ");
   ternaryopr(a);
+  switching();
 }
 
 //if else
@@ -61,4 +62,23 @@ void ternaryopr(a){//condition ? value_if_true : value_if_false
   var result = a == 2 ? "yes - 2" : "no - 2";
   print(result);
 
+}
+
+//switch case
+switching(){
+  var day = 2;
+
+  switch(day){
+    case 1:
+      print("day 1");
+      break;
+    case 2:
+      print("day 2");
+      break;
+    case 3:
+      print("day 3");
+      break;
+    default:
+      print("invalid day");
+  }
 }
