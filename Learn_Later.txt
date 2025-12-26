@@ -1,0 +1,205 @@
+🧾 Dart Documentation Markdown Cheat-Sheet
+1️⃣ Headings (Use Instead of <h1> etc.)
+/// # Heading 1
+/// ## Heading 2
+/// ### Heading 3
+/// #### Heading 4
+
+
+✔ Renders as proper titles
+❌ HTML tags do not render
+
+2️⃣ Bold, Italic, Inline Text
+/// **Bold text**
+/// *Italic text*
+/// ***Bold + Italic***
+
+3️⃣ Inline Code
+/// Use `dynamic` carefully
+/// The `var` keyword enables type inference
+
+
+✔ Very important for explaining code terms
+
+4️⃣ Bullet Lists
+/// Types of variables:
+/// - Static: type defined by programmer
+/// - Inferred: compiler decides the type
+/// - Dynamic: runtime type
+
+5️⃣ Numbered Lists
+/// Steps:
+/// 1. Declare variable
+/// 2. Assign value
+/// 3. Use variable
+
+6️⃣ Code Blocks (VERY IMPORTANT)
+/// Example:
+/// ```dart
+/// var x = 10;
+/// print(x);
+/// ```
+
+
+✔ Renders nicely in documentation
+✔ Use language name for clarity
+
+7️⃣ Links
+/// Learn more at:
+/// https://dart.dev/language
+
+
+OR
+
+/// [Dart Language Guide](https://dart.dev/language)
+
+8️⃣ Tables (Limited but Supported)
+/// | Type | Description |
+/// |------|-------------|
+/// | int  | Integer     |
+/// | var  | Inferred    |
+
+
+✔ Good for comparisons
+⚠️ Keep tables small
+
+9️⃣ Block Quotes
+/// > Dynamic variables are checked at runtime.
+
+
+Useful for notes & warnings.
+
+🔟 Parameter Documentation (Very Important)
+/// Adds two numbers.
+/// 
+/// - [a]: first number
+/// - [b]: second number
+/// 
+/// Returns the sum of `a` and `b`.
+int add(int a, int b) {
+  return a + b;
+}
+
+
+✔ [param] becomes clickable
+✔ Industry-standard format
+
+1️⃣1️⃣ Referencing Other Code
+/// Calls the [printDetails] method.
+
+
+If printDetails() exists, VS Code links it.
+
+1️⃣2️⃣ Class Documentation
+/// ## Student Class
+/// 
+/// Represents a student entity.
+/// 
+/// **Fields**
+/// - `name`: student name
+/// - `age`: student age
+class Student {
+  String name;
+  int age;
+
+  Student(this.name, this.age);
+}
+
+1️⃣3️⃣ Warnings / Notes (Style Convention)
+/// ⚠️ Warning:
+/// Avoid using `dynamic` unless necessary.
+
+
+(Emoji supported ✔️)
+
+1️⃣4️⃣ What is NOT Supported ❌
+/// <h1>HTML</h1>       ❌
+/// <b>Bold</b>        ❌
+/// <p>Paragraph</p>   ❌
+/// <div>Block</div>   ❌
+
+
+HTML is shown as plain text only.
+
+1️⃣5️⃣ FULL Real Example (Best Practice)
+/// # Variable Types in Dart
+///
+/// Dart supports three ways of defining variables:
+///
+/// - **Static**: Explicit type declaration
+/// - **Inferred**: Compiler decides type
+/// - **Dynamic**: Type decided at runtime
+///
+/// ## Example
+/// ```dart
+/// var name = "Neeraj";
+/// dynamic age = 22;
+/// ```
+///
+/// ⚠️ Use `dynamic` cautiously.
+void example() {}
+
+🧠 How This Works (Internally)
+
+/// → Documentation comment
+
+Markdown → Parsed by Dart Analyzer
+
+VS Code → Renders in hover window
+
+dart doc → Generates HTML docs
+
+
+-------------------------------------------------------------------------------
+1️⃣ Functions + Null Safety (advanced patterns) 2️⃣ Collections (List & Map) with functions 
+3️⃣ Control flow (if, for, while) 4️⃣ Classes & Objects (pure Dart OOP)
+
+-------------------------------------------------------------------------------
+
+Primary Command
+Production: dart compile js -o <output_file>.js <input_file>.dart
+This generates minified, optimized JavaScript suitable for deployment.
+Use the -On flag (e.g., -O2, -O3) to specify the optimization level. 
+Recommended Web Tools
+For web development, the Dart team recommends using the webdev tool instead of calling the compiler directly: 
+Build for Deployment: webdev build (uses the production compiler).
+Development Server: webdev serve (uses the development compiler for fast incremental builds). 
+Legacy Note
+The standalone dart2js command-line tool was removed in Dart 2.18 and replaced by dart compile js. 
+
+
+
+
+undefined
+undefined
+undefined
+11 sites
+Dart (programming language) - Wikipedia
+Introduced in Dart 2.0, the Dart-based dart2js evolved from earlier compilers. It intended to implement the full Dart language spe...
+
+Wikipedia
+
+dart compile
+21 Oct 2025 — Overview. ... If your package or any of its dependencies has build hooks, you must use the dart build command. The dart...
+
+Dart programming language
+dart2js: Dart-to-JavaScript compiler
+14 Sept 2025 — Dart 2.18 removes the dart2js command-line tool from the Dart package, but retains the dart2js compiler. Use dart comp...
+
+Dart programming language
+Show all
+i did not understand webdev
+webdev is a command-line tool used to run and build Dart web applications. It manages the complex process of compiling your code, handling assets, and serving your app in a local browser during development. 
+How to Use webdev
+Installation: Install it globally using the Dart package manager:
+dart pub global activate webdev.
+Run for Development: In your project folder, run:
+webdev serve.
+This starts a local server (usually at localhost:8080) and automatically recompiles your code whenever you save changes.
+Build for Production: When your app is ready for the web, run:
+webdev build.
+This creates a build/ folder containing highly optimized, minified JavaScript files that you can upload to any web host. 
+Why use it instead of just dart compile js?
+Automation: It watches your files and reloads the browser automatically.
+Debugging: It uses a special development compiler that makes it much easier to debug your Dart code directly in Chrome.
+Project Structure: It understands standard Dart web project layouts and automatically includes your HTML, CSS, and other assets in the final build.
